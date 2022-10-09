@@ -1,3 +1,4 @@
+package rickAndMorty;
 
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
@@ -13,24 +14,25 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class RestTest {
-    private static final String URL = " https://rickandmortyapi.com/api";
+    private static final String BASE_URI = "https://rickandmortyapi.com/api";
 
     @Test
     public void getRick() {
         List<Character> characters = given()
+                    .baseUri(BASE_URI)
+                    .contentType(ContentType.JSON)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(URL + "/character")
+                    .get( "/character")
                 .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getList("results", Character.class);
+                    .log()
+                    .all()
+                    .extract()
+                    .body()
+                    .jsonPath()
+                    .getList("results", Character.class);
 
         Optional<Character> optionalMortySmith = characters.stream()
-                .filter(user -> user.getName().matches("Morty Smith"))
+                .filter(user -> user.name.matches("Morty Smith"))
                 .findFirst();
         assertTrue(optionalMortySmith.isPresent(), "Не нашли юзера Morty Smith");
         System.out.println(optionalMortySmith.get());
@@ -39,19 +41,20 @@ public class RestTest {
     @Test
     public void getRickLastEpisode() {
         List<Character> characters = given()
+                    .baseUri(BASE_URI)
+                    .contentType(ContentType.JSON)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(URL + "/character")
+                    .get("/character")
                 .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getList("results", Character.class);
+                    .log()
+                    .all()
+                    .extract()
+                    .body()
+                    .jsonPath()
+                    .getList("results", Character.class);
 
         Optional<Character> optionalMortySmith = characters.stream()
-                .filter(user -> user.getName().matches("Morty Smith"))
+                .filter(user -> user.name.matches("Morty Smith"))
                 .findFirst();
         assertTrue(optionalMortySmith.isPresent(), "Не нашли юзера Morty Smith");
         Character mortySmith = optionalMortySmith.get();
@@ -63,19 +66,20 @@ public class RestTest {
     @Test
     public void getLastCharacterFromLastEpisodeOfRickMorty() {
         List<Character> characters = given()
+                    .baseUri(BASE_URI)
+                    .contentType(ContentType.JSON)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(URL + "/character")
+                    .get("/character")
                 .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getList("results", Character.class);
+                    .log()
+                    .all()
+                    .extract()
+                    .body()
+                    .jsonPath()
+                    .getList("results", Character.class);
 
         Optional<Character> optionalMortySmith = characters.stream()
-                .filter(user -> user.getName().matches("Morty Smith"))
+                .filter(user -> user.name.matches("Morty Smith"))
                 .findFirst();
         assertTrue(optionalMortySmith.isPresent(), "Не нашли юзера Morty Smith");
         Character mortySmith = optionalMortySmith.get();
@@ -83,16 +87,16 @@ public class RestTest {
         String lastEpisodeOfMortySmith = mortySmith.episode.get(mortySmith.episode.size() - 1);
 
         Episode lastEpisode = given()
+                    .contentType(ContentType.JSON)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(lastEpisodeOfMortySmith)
+                    .get(lastEpisodeOfMortySmith)
                 .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getObject(".", Episode.class);
+                    .log()
+                    .all()
+                    .extract()
+                    .body()
+                    .jsonPath()
+                    .getObject(".", Episode.class);
 
         assertFalse(lastEpisode.characters.isEmpty(), "Нет персонажей в эпизоде");
         System.out.println(lastEpisode.characters.get(lastEpisode.characters.size() - 1));
@@ -101,19 +105,21 @@ public class RestTest {
     @Test
     public void getLocationAndRaceOfLastCharacterFromLastEpisodeOfRickMorty() {
         List<Character> characters = given()
+                    .baseUri(BASE_URI)
+                    .contentType(ContentType.JSON)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(URL + "/character")
+                    .get( "/character")
                 .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getList("results", Character.class);
+                    .log()
+                    .all()
+                    .extract()
+                    .body()
+                    .jsonPath()
+                    .getList("results", Character.class);
+
 
         Optional<Character> optionalMortySmith = characters.stream()
-                .filter(user -> user.getName().matches("Morty Smith"))
+                .filter(user -> user.name.matches("Morty Smith"))
                 .findFirst();
         assertTrue(optionalMortySmith.isPresent(), "Не нашли юзера Morty Smith");
         Character mortySmith = optionalMortySmith.get();
@@ -121,89 +127,36 @@ public class RestTest {
         String lastEpisodeOfMortySmith = mortySmith.episode.get(mortySmith.episode.size() - 1);
 
         Episode lastEpisode = given()
+                    .contentType(ContentType.JSON)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(lastEpisodeOfMortySmith)
+                    .get(lastEpisodeOfMortySmith)
                 .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getObject(".", Episode.class);
+                    .log()
+                    .all()
+                    .extract()
+                    .body()
+                    .jsonPath()
+                    .getObject(".", Episode.class);
 
         assertFalse(lastEpisode.characters.isEmpty(), "Нет персонажей в эпизоде");
         String lastCharacterId = lastEpisode.characters.get(lastEpisode.characters.size() - 1);
 
         Character lastCharacter = given()
+                    .contentType(ContentType.JSON)
                 .when()
-                .contentType(ContentType.JSON)
-                .get(lastCharacterId)
+                    .get(lastCharacterId)
                 .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getObject(".", Character.class);
+                    .log()
+                    .all()
+                    .extract()
+                    .body()
+                    .jsonPath()
+                    .getObject(".", Character.class);
 
-        assertFalse(lastCharacter.location.getName().isEmpty(), "Нет данных о местоположении");
+        assertFalse(lastCharacter.location.name.isEmpty(), "Нет данных о местоположении");
         assertFalse(lastCharacter.species.isEmpty(), "Нет данных о расе");
 
         System.out.println("Местоположение: " + lastCharacter.location.name + " Раса: " + lastCharacter.species);
-    }
-
-    @Test
-    public void checkLocationAndSpeciesOfLastCharacterAndMorty() {
-        List<Character> characters = given()
-                .when()
-                .contentType(ContentType.JSON)
-                .get(URL + "/character")
-                .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getList("results", Character.class);
-
-        Optional<Character> optionalMortySmith = characters.stream()
-                .filter(user -> user.getName().matches("Morty Smith"))
-                .findFirst();
-        assertTrue(optionalMortySmith.isPresent(), "Не нашли юзера Morty Smith");
-        Character mortySmith = optionalMortySmith.get();
-        assertFalse(mortySmith.episode.isEmpty(), "У Рика Морти нет эпизодов");
-        String lastEpisodeOfMortySmith = mortySmith.episode.get(mortySmith.episode.size() - 1);
-
-        Episode lastEpisode = given()
-                .when()
-                .contentType(ContentType.JSON)
-                .get(lastEpisodeOfMortySmith)
-                .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getObject(".", Episode.class);
-
-        assertFalse(lastEpisode.characters.isEmpty(), "Нет персонажей в эпизоде");
-        String lastCharacterId = lastEpisode.characters.get(lastEpisode.characters.size() - 1);
-
-        Character lastCharacter = given()
-                .when()
-                .contentType(ContentType.JSON)
-                .get(lastCharacterId)
-                .then()
-                .log()
-                .all()
-                .extract()
-                .body()
-                .jsonPath()
-                .getObject(".", Character.class);
-
-        assertFalse(lastCharacter.location.getName().isEmpty(), "Нет данных о местоположении");
-        assertFalse(lastCharacter.species.isEmpty(), "Нет данных о расе");
 
         assertAll(
                 () -> assertEquals(mortySmith.location.name, lastCharacter.location.name),

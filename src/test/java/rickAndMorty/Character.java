@@ -1,3 +1,5 @@
+package rickAndMorty;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -46,57 +48,9 @@ public class Character {
         this.created = created;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public Object getOrigin() {
-        return origin;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public ArrayList<String> getEpisode() {
-        return episode;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getCreated() {
-        return created;
-    }
-
     @Override
     public String toString() {
-        return "Character: { \n" +
+        return "rickAndMorty.Character: { \n" +
                 "id: " + id + "\n" +
                 "name: " + name + "\n" +
                 "status: " + status + "\n" +

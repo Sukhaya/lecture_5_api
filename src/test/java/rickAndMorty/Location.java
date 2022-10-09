@@ -1,3 +1,5 @@
+package rickAndMorty;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -11,13 +13,5 @@ public class Location {
             @JsonProperty("url") String url) {
         this.name = name;
         this.url = url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getUrl() {
-        return url;
     }
 }

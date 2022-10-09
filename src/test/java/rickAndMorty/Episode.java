@@ -1,3 +1,5 @@
+package rickAndMorty;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -28,33 +30,5 @@ public class Episode {
         this.characters = characters;
         this.url = url;
         this.created = created;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAirDate() {
-        return airDate;
-    }
-
-    public String getEpisode() {
-        return episode;
-    }
-
-    public ArrayList<String> getCharacters() {
-        return characters;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getCreated() {
-        return created;
     }
 }

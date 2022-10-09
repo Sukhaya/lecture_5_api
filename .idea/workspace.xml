@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fba1224-6812-4ef5-b9b9-e74069924955" name="Changes" comment="" />
+    <list default="true" id="7fba1224-6812-4ef5-b9b9-e74069924955" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/user.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/authorization/JiraTasksTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/authorization/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/reqres/ReqResTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/rickAndMorty/Character.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/rickAndMorty/Episode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/rickAndMorty/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/rickAndMorty/RestTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Fi2Lzzz06vX0qP6Sec37uPUEmF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -18,12 +46,92 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="JUnit.RestTest.getLocationAndRaceOfLastCharacterFromLastEpisodeOfRickMorty">
+    <configuration name="JiraTasksTest.authorizationWithSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lecture_5_api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="authorization.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="authorization" />
+      <option name="MAIN_CLASS_NAME" value="authorization.JiraTasksTest" />
+      <option name="METHOD_NAME" value="authorizationWithSession" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReqResTest.createUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lecture_5_api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="reqres.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="reqres" />
+      <option name="MAIN_CLASS_NAME" value="reqres.ReqResTest" />
+      <option name="METHOD_NAME" value="createUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestTest.checkLocationAndSpeciesOfLastCharacterAndMorty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lecture_5_api" />
+      <option name="PACKAGE_NAME" value="rickAndMorty" />
+      <option name="MAIN_CLASS_NAME" value="rickAndMorty.RestTest" />
+      <option name="METHOD_NAME" value="checkLocationAndSpeciesOfLastCharacterAndMorty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestTest.getLastCharacterFromLastEpisodeOfRickMorty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lecture_5_api" />
+      <option name="PACKAGE_NAME" value="rickAndMorty" />
+      <option name="MAIN_CLASS_NAME" value="rickAndMorty.RestTest" />
+      <option name="METHOD_NAME" value="getLastCharacterFromLastEpisodeOfRickMorty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestTest.getLocationAndRaceOfLastCharacterFromLastEpisodeOfRickMorty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lecture_5_api" />
+      <option name="PACKAGE_NAME" value="rickAndMorty" />
+      <option name="MAIN_CLASS_NAME" value="rickAndMorty.RestTest" />
+      <option name="METHOD_NAME" value="getLocationAndRaceOfLastCharacterFromLastEpisodeOfRickMorty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.RestTest.getLocationAndRaceOfLastCharacterFromLastEpisodeOfRickMorty" />
+        <item itemvalue="JUnit.ReqResTest.createUser" />
+        <item itemvalue="JUnit.JiraTasksTest.authorizationWithSession" />
+        <item itemvalue="JUnit.RestTest.checkLocationAndSpeciesOfLastCharacterAndMorty" />
+        <item itemvalue="JUnit.RestTest.getLastCharacterFromLastEpisodeOfRickMorty" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,5 +153,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lecture_5_api$ReqResTest_createUser.ic" NAME="ReqResTest.createUser Coverage Results" MODIFIED="1665322533388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>reqres.*</FILTER>
+    </SUITE>
   </component>
 </project>
