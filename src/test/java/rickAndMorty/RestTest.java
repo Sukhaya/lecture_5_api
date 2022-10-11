@@ -42,7 +42,8 @@ public class RestTest {
     public void getRickLastEpisode() {
         List<Character> characters = given()
                     .baseUri(BASE_URI)
-                    .contentType(ContentType.JSON)
+
+                .contentType(ContentType.JSON)
                 .when()
                     .get("/character")
                 .then()
